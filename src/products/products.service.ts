@@ -6,12 +6,9 @@ export class ProductsService {
   products: Product[] = [];
 
   insertProduct(title: string, description: string, price: number) {
-    const newProduct = new Product(
-      new Date().toString(),
-      title,
-      description,
-      price,
-    );
+    const prodId = new Date().toString();
+    const newProduct = new Product(prodId, title, description, price);
     this.products.push(newProduct);
+    return prodId;
   }
 }
